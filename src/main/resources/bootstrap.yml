@@ -14,11 +14,12 @@ eureka:
 zuul:
   routes:
     # /myProduct/product/list -> /product/product/list
-#    myProduct:
-#      path: /myProduct/**
-#      serviceId: product
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+      sensitiveHeaders:
 #    简洁写法
-    product: /myProduct/**
+#    product: /myProduct/**
 #  排除某些路由
   ignored-patterns:
     - /**/product/listForOrder
