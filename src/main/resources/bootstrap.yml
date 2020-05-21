@@ -17,6 +17,7 @@ zuul:
     myProduct:
       path: /myProduct/**
       serviceId: product
+      #滤客户端请求中的和该配置项匹配的headers
       sensitiveHeaders:
 #    简洁写法
 #    product: /myProduct/**
@@ -25,4 +26,4 @@ zuul:
     - /**/product/listForOrder
 management:
   security:
-    enabled: false
+    enabled: false  #设置后可查看路由 http://localhost:9000/application/routes
