@@ -11,19 +11,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-zuul:
-  routes:
-    # /myProduct/product/list -> /product/product/list
-    myProduct:
-      path: /myProduct/**
-      serviceId: product
-      #滤客户端请求中的和该配置项匹配的headers
-      sensitiveHeaders:
-#    简洁写法
-#    product: /myProduct/**
-#  排除某些路由
-  ignored-patterns:
-    - /**/product/listForOrder
-management:
-  security:
-    enabled: false  #设置后可查看路由 http://localhost:9000/application/routes
